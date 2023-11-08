@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="/fragments/resources :: headResources('Songs')"></head>
+<body>
+<div class="container">
+  <h1>Song detail</h1>
+  <div th:if="${songDetail != null}">
+    <p th:text="|Id: ${songDetail.id}|"></p>
+    <p th:text="|Title: ${songDetail.title}|"></p>
+  </div>
+  <div th:if="${songDetail == null}">
+    Unable to find the song
+  </div>
+  <a th:href="@{/songs}">Back to song list</a>
+</div>
+
+<th:block th:replace="/fragments/resources :: jsResources"></th:block>
+</body>
+</html>

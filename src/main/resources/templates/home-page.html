@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="/fragments/resources :: headResources('Home')"></head>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div class="mt-5" style="max-width: 800px; margin-inline: auto">
+  <div class="card text-center">
+    <div class="card-header">
+      <h1>BEST OF THE YEAR</h1>
+      <h3 th:text="${name}"></h3>
+      <ul class="nav nav-pills card-header-pills d-flex justify-content-between pb-3 mx-5">
+        <li class="nav-item">
+          <a class="nav-link active" th:href="@{/songs}">Best Songs</a>
+        </li>
+        <li class="nav-item" style="margin-left: 20px !important;">
+          <a class="nav-link active" th:href="@{/movies}">Best Movies</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">So stanco so le 18:30</h5>
+      <p class="card-text">Porca trota quando ce sto a mette</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+
+
+<th:block th:replace="/fragments/resources :: jsResources"></th:block>
+</body>
+</html>

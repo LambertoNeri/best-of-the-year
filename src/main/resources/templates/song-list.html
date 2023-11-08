@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="/fragments/resources :: headResources('Songs')"></head>
+<body>
+
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Songs</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+      content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<div class="container">
+  <ul th:if="${songList.size() > 0}">
+    <li th:each="song : ${songList}">
+      <a th:href="@{|/songs/${song.id}|}">
+        <span th:text="${song.id}"></span>
+        <span th:text="${song.title}"></span>
+      </a>
+    </li>
+  </ul>
+  <div th:unless="${songList.size() > 0}">No results</div>
+</div>
+<a th:href="@{/}">Back to HOME</a>
+<th:block th:replace="fragments/resources :: jsResources"></th:block>
+</body>
+</html>
