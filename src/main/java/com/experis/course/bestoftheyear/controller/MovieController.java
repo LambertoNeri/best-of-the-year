@@ -22,6 +22,7 @@ public class MovieController {
 //        titleParam != null ? getFilteredMovies(titleParam) : getBestMovies();
 //    model.addAttribute("movieList", filteredMovies);
     model.addAttribute("movieList", getBestMovies());
+    model.addAttribute("name", " Lamberto Neri");
     return "movie-list";
   }
 

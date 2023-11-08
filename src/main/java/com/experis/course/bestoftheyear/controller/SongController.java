@@ -18,6 +18,7 @@ public class SongController {
   @GetMapping
   public String songs(Model model) {
     model.addAttribute("songList", getBestSongs());
+    model.addAttribute("name", " Lamberto Neri");
     return "song-list";
   }
 
