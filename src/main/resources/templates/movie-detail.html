@@ -2,17 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:insert="/fragments/resources :: headResources('Movie Detail')"></head>
 <body>
-<div class="container">
-  <h1>Movie detail</h1>
-  <div th:if="${movieDetail != null}">
-    <p th:text="|Id: ${movieDetail.id}|"></p>
-    <p th:text="|Title: ${movieDetail.title}|"></p>
+
+<div class="card mx-auto mt-5" style="width: 18rem;">
+  <div class="card-body" th:if="${movieDetail != null}">
+    <h3 class="card-title">MOVIE DETAILS</h3>
+    <p class="card-text" th:text="|Id: ${movieDetail.id}|"></p>
+    <p class="card-text" th:text="|Title: ${movieDetail.title}|"></p>
+    <a th:href="@{/}">Back to HOME</a>
+    <a th:href="@{/movies}">Back to movie list</a>
   </div>
-  <div th:if="${movieDetail == null}">
-    Unable to find movie
-  </div>
-  <a th:href="@{/movies}">Back to movie list</a>
 </div>
+
 
 <th:block th:replace="/fragments/resources :: jsResources"></th:block>
 </body>
